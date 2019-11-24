@@ -4,11 +4,12 @@ import Backdrop from '../Backdrop/Backdrop';
 
 import classes from './Modal.css';
 
-const modal = (props) =>(
+const modal = (props) => (
   <Auxiliary>
     <Backdrop show={props.show} clicked={props.modalClosed} />
     <div className={classes.Modal}
       style={{
+        display: props.show ? "block" : "none",
         transform: props.show ? "translateY{0}" : "translateY{-100vh}",
         opacity: props.show ? "1" : "0"
       }}>
